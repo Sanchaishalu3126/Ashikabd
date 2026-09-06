@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Our Little Diary</title>
+
+    <link rel="stylesheet" href="diary.css">
+
+</head>
+
+<body>
+
+
+    <!-- =================================
+         BACKGROUND
+    ================================== -->
+
+    <div class="background-glow"></div>
+
+    <div class="stars">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+
+    <!-- =================================
+         MAIN DIARY
+    ================================== -->
+
+    <main class="diary-page">
+
+
+        <!-- =================================
+             HEADING
+        ================================== -->
+
+        <div class="diary-heading">
+
+            <div class="small-title">
+                A LITTLE
+            </div>
+
+            <h1>
+                Diary
+            </h1>
+
+            <div class="heading-line"></div>
+
+            <p>
+                It's you... open me
+            </p>
+
+        </div>
+
+
+        <!-- =================================
+             BOOK
+        ================================== -->
+
+        <section class="book-area">
+
+            <div
+                class="book"
+                id="book"
+            >
+
+
+                <!-- =================================
+                     LEFT PAGE
+                ================================== -->
+
+                <div class="book-page left-page">
+
+                    <div class="page-content">
+
+                        <span class="page-number">
+                            ✦
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     RIGHT / COVER PAGE
+                ================================== -->
+
+                <div class="book-page right-page">
+
+                    <div class="page-content">
+
+                        <div class="cover-content">
+
+                            <div class="cover-icon">
+                                ♡
+                            </div>
+
+                            <h2>
+                                It's you...
+                            </h2>
+
+                            <p>
+                            </p>
+
+                            <div class="cover-arrow">
+                                →
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     FLIPPING PAGE
+                ================================== -->
+
+                <div
+                    class="flip-page"
+                    id="flipPage"
+                >
+
+                    <div class="flip-front">
+
+                        <img
+                            id="flipImage"
+                            src="img/diary1.jpg"
+                            alt="Memory"
+                        >
+
+                        <!-- TEXT ON IMAGE -->
+
+                        <div
+                            class="memory-text"
+                            id="memoryText"
+                        >
+                            It's You ❤️
+                        </div>
+
+                    </div>
+
+
+                    <div class="flip-back">
+
+                        <div class="back-decoration">
+                            ♡
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             INSTRUCTION
+        ================================== -->
+
+        <div
+            class="instruction"
+            id="instruction"
+        >
+
+            <span class="hand-icon">
+                ☝
+            </span>
+
+            Swipe left to open
+
+        </div>
+
+
+        <!-- =================================
+             PAGE INDICATORS
+        ================================== -->
+
+        <div
+            class="page-dots"
+            id="pageDots"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
+        <!-- =================================
+             NEXT BUTTON
+        ================================== -->
+
+        <button
+            id="nextButton"
+            class="next-button"
+        >
+
+            NEXT
+
+            <span>
+                →
+            </span>
+
+        </button>
+
+
+    </main>
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
+    <script src="diary.js"></script>
+
+</body>
+

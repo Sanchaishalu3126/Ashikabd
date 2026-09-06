@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at center, #350000, #100000 60%, #030000);
+
+    font-family: Georgia, serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 15px;
+
+    color: #222;
+}
+
+.note-container {
+    width: min(100%, 500px);
+
+    text-align: center;
+
+    animation: noteAppear 1s ease;
+}
+
+.notepad {
+    position: relative;
+
+    width: 100%;
+
+    padding-left: 28px;
+}
+
+.paper {
+    position: relative;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf4 0px,
+            #fffdf4 30px,
+            #e7e0cf 31px
+        );
+
+    min-height: 520px;
+
+    padding: 45px 30px 35px;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(255, 0, 0, 0.12);
+
+    text-align: left;
+}
+
+.paper-title {
+    text-align: center;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #5a1717;
+
+    margin-bottom: 12px;
+}
+
+.line {
+    height: 1px;
+
+    background: #b8a99a;
+
+    margin-bottom: 22px;
+}
+
+.paper p {
+    font-size: 15px;
+
+    line-height: 30px;
+
+    margin-bottom: 8px;
+}
+
+.last-line {
+    color: #8d1f1f;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+}
+
+.signature {
+    text-align: right;
+
+    margin-top: 20px;
+
+    font-style: italic;
+
+    color: #555;
+}
+
+.spiral {
+    position: absolute;
+
+    left: 0;
+    top: 30px;
+
+    width: 35px;
+
+    z-index: 5;
+}
+
+.spiral span {
+    display: block;
+
+    width: 25px;
+    height: 25px;
+
+    margin-bottom: 27px;
+
+    border: 4px solid #777;
+
+    border-radius: 50%;
+
+    background: #222;
+
+    box-shadow:
+        0 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+#restartButton {
+    margin-top: 25px;
+
+    width: 180px;
+
+    padding: 13px;
+
+    border-radius: 25px;
+
+    border: 1px solid #ff4444;
+
+    background: rgba(255, 0, 0, 0.1);
+
+    color: white;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#restartButton:hover {
+    background: #ff2222;
+
+    box-shadow:
+        0 0 20px rgba(255, 0, 0, 0.5);
+
+    transform: scale(1.04);
+}
+
+@keyframes noteAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px) rotate(-1deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .paper {
+        padding: 35px 22px 30px;
+    }
+
+    .paper p {
+        font-size: 14px;
+        line-height: 28px;
+    }
+
+    .paper-title {
+        font-size: 17px;
+    }
+
+}

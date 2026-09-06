@@ -1,0 +1,733 @@
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================
+   BODY
+   ========================================= */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #350000 0%,
+            #150000 55%,
+            #030000 100%
+        );
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px 15px;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+   ========================================= */
+
+.age-container {
+
+    width: min(100%, 650px);
+
+    text-align: center;
+
+    animation: pageAppear 1s ease;
+
+}
+
+
+/* =========================================
+   TOP SMALL TEXT
+   ========================================= */
+
+.top-text {
+
+    font-size: 14px;
+
+    letter-spacing: 6px;
+
+    line-height: 1.6;
+
+    color: #ff7777;
+
+    margin-bottom: 30px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================
+   MAIN TITLE
+   ========================================= */
+
+h1 {
+
+    font-size: 44px;
+
+    letter-spacing: 7px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    margin-bottom: 65px;
+
+    text-shadow:
+        0 0 10px rgba(255, 0, 0, 0.3);
+
+}
+
+
+/* =========================================
+   LABEL
+   ========================================= */
+
+.label {
+
+    font-size: 15px;
+
+    letter-spacing: 5px;
+
+    color: #999;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================
+   DATE OF BIRTH
+   ========================================= */
+
+.dob-section {
+
+    margin-bottom: 55px;
+
+}
+
+
+.dob {
+
+    margin-top: 22px;
+
+    font-size: 34px;
+
+    letter-spacing: 7px;
+
+    color: #ffe2e2;
+
+}
+
+
+/* =========================================
+   AGE
+   ========================================= */
+
+.age-section {
+
+    margin-bottom: 55px;
+
+}
+
+
+.age-number {
+
+    margin-top: 22px;
+
+    font-size: 100px;
+
+    line-height: 1;
+
+    font-weight: bold;
+
+    color: #ff3333;
+
+    text-shadow:
+        0 0 10px rgba(255, 0, 0, 0.65),
+        0 0 25px rgba(255, 0, 0, 0.35);
+
+}
+
+
+.years {
+
+    margin-top: 18px;
+
+    font-size: 18px;
+
+    letter-spacing: 7px;
+
+    color: #ffbaba;
+
+}
+
+
+/* =========================================
+   TIME TITLE
+   ========================================= */
+
+.countdown-title {
+
+    margin-top: 10px;
+
+    margin-bottom: 30px;
+
+    font-size: 15px;
+
+    letter-spacing: 5px;
+
+    color: #999;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================
+   TIME BOX CONTAINER
+   ========================================= */
+
+.countdown {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+    padding: 0 20px;
+
+}
+
+
+/* =========================================
+   TIME BOX
+   ========================================= */
+
+.time-box {
+
+    width: 100%;
+
+    min-width: 0;
+
+    height: 135px;
+
+    border: 1px solid
+        rgba(255, 40, 40, 0.55);
+
+    border-radius: 16px;
+
+    background:
+        rgba(80, 0, 0, 0.15);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 12px
+        rgba(255, 0, 0, 0.08);
+
+}
+
+
+/* =========================================
+   TIME NUMBER
+   ========================================= */
+
+.time-box div {
+
+    width: 100%;
+
+    padding: 0 4px;
+
+    text-align: center;
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    line-height: 1.2;
+
+    color: #ff4141;
+
+    white-space: nowrap;
+
+    letter-spacing: 0;
+
+    text-shadow:
+        0 0 8px
+        rgba(255, 0, 0, 0.35);
+
+}
+
+
+/* =========================================
+   TIME LABEL
+   ========================================= */
+
+.time-box span {
+
+    margin-top: 14px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: #999;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================
+   NEXT BUTTON
+   ========================================= */
+
+#nextButton {
+
+    display: block;
+
+    width: 340px;
+
+    max-width: 85%;
+
+    margin: 65px auto 0;
+
+    padding: 16px 25px;
+
+    border-radius: 40px;
+
+    border: 1px solid #ff3333;
+
+    background:
+        rgba(70, 0, 0, 0.15);
+
+    color: white;
+
+    font-size: 17px;
+
+    letter-spacing: 5px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+#nextButton:hover {
+
+    background:
+        rgba(255, 0, 0, 0.15);
+
+    box-shadow:
+        0 0 20px
+        rgba(255, 0, 0, 0.35);
+
+}
+
+
+#nextButton:active {
+
+    transform: scale(0.94);
+
+}
+
+
+/* =========================================
+   PAGE ANIMATION
+   ========================================= */
+
+@keyframes pageAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .age-container {
+
+        width: 100%;
+
+    }
+
+
+    h1 {
+
+        font-size: 36px;
+
+        letter-spacing: 5px;
+
+    }
+
+
+    .dob {
+
+        font-size: 30px;
+
+    }
+
+
+    .age-number {
+
+        font-size: 90px;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 500px) {
+
+    body {
+
+        padding:
+            30px 10px;
+
+        align-items: flex-start;
+
+    }
+
+
+    .age-container {
+
+        padding-top: 45px;
+
+    }
+
+
+    .top-text {
+
+        font-size: 12px;
+
+        letter-spacing: 4px;
+
+        margin-bottom: 28px;
+
+        padding: 0 20px;
+
+    }
+
+
+    h1 {
+
+        font-size: 30px;
+
+        letter-spacing: 4px;
+
+        margin-bottom: 55px;
+
+    }
+
+
+    .label {
+
+        font-size: 13px;
+
+        letter-spacing: 4px;
+
+    }
+
+
+    .dob-section {
+
+        margin-bottom: 50px;
+
+    }
+
+
+    .dob {
+
+        margin-top: 18px;
+
+        font-size: 27px;
+
+        letter-spacing: 5px;
+
+    }
+
+
+    .age-section {
+
+        margin-bottom: 50px;
+
+    }
+
+
+    .age-number {
+
+        margin-top: 18px;
+
+        font-size: 82px;
+
+    }
+
+
+    .years {
+
+        margin-top: 15px;
+
+        font-size: 16px;
+
+        letter-spacing: 6px;
+
+    }
+
+
+    /* TIME TITLE */
+
+    .countdown-title {
+
+        margin-top: 10px;
+
+        margin-bottom: 25px;
+
+        font-size: 12px;
+
+        letter-spacing: 3px;
+
+        padding: 0 10px;
+
+    }
+
+
+    /* THREE BOXES */
+
+    .countdown {
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 8px;
+
+        padding:
+            0 8px;
+
+    }
+
+
+    /* BOX */
+
+    .time-box {
+
+        height: 125px;
+
+        border-radius: 14px;
+
+    }
+
+
+    /* NUMBERS */
+
+    .time-box div {
+
+        font-size: 17px;
+
+        padding:
+            0 2px;
+
+    }
+
+
+    /* LABELS */
+
+    .time-box span {
+
+        margin-top: 10px;
+
+        font-size: 9px;
+
+        letter-spacing: 1px;
+
+    }
+
+
+    /* NEXT */
+
+    #nextButton {
+
+        width: 330px;
+
+        max-width: 85%;
+
+        margin-top: 55px;
+
+        padding: 15px;
+
+        font-size: 16px;
+
+        letter-spacing: 4px;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 380px) {
+
+    body {
+
+        padding-left: 6px;
+
+        padding-right: 6px;
+
+    }
+
+
+    .age-container {
+
+        padding-top: 35px;
+
+    }
+
+
+    .top-text {
+
+        font-size: 11px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    h1 {
+
+        font-size: 26px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .dob {
+
+        font-size: 24px;
+
+        letter-spacing: 4px;
+
+    }
+
+
+    .age-number {
+
+        font-size: 75px;
+
+    }
+
+
+    .countdown {
+
+        gap: 5px;
+
+        padding:
+            0 4px;
+
+    }
+
+
+    .time-box {
+
+        height: 115px;
+
+    }
+
+
+    .time-box div {
+
+        font-size: 14px;
+
+    }
+
+
+    .time-box span {
+
+        font-size: 8px;
+
+        letter-spacing: 0.8px;
+
+    }
+
+
+    #nextButton {
+
+        margin-top: 50px;
+
+    }
+
+}

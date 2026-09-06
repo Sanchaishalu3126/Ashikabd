@@ -1,0 +1,769 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 50% 5%,
+            #ff0808 0%,
+            #d00000 18%,
+            #720000 40%,
+            #280000 65%,
+            #080000 85%,
+            #000000 100%
+        );
+
+    font-family: Georgia, "Times New Roman", serif;
+    color: white;
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.background-glow {
+    position: fixed;
+
+    top: -180px;
+    left: 50%;
+
+    width: 650px;
+    height: 550px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255, 0, 0, 0.8),
+            rgba(180, 0, 0, 0.4) 45%,
+            transparent 72%
+        );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================
+   PARTICLES
+========================================= */
+
+.particles {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.particles::before,
+.particles::after {
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #ffaaaa;
+
+    box-shadow:
+        0 0 7px #ff7777,
+        0 0 15px rgba(255, 0, 0, 0.8);
+
+    animation: blink 3s infinite;
+}
+
+.particles::before {
+    top: 30%;
+    left: 8%;
+}
+
+.particles::after {
+    top: 75%;
+    right: 12%;
+
+    animation-delay: 1.5s;
+}
+
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.birthday-page {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding-top: 105px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.birthday-title {
+    width: 100%;
+}
+
+.birthday-title h1,
+.birthday-title h2 {
+
+    margin: 0;
+
+    font-size: 48px;
+
+    line-height: 1.15;
+
+    font-weight: bold;
+
+    color: #ffaaaa;
+
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 15px rgba(255, 100, 100, 0.7),
+        0 0 30px rgba(255, 0, 0, 0.5);
+}
+
+.birthday-title h2 {
+    margin-top: 2px;
+}
+
+
+/* =========================================
+   TITLE LINE
+========================================= */
+
+.title-line {
+
+    width: 285px;
+
+    height: 2px;
+
+    margin-top: 22px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #ff5555,
+            #ffaaaa,
+            #ff5555,
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px #ff4444,
+        0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+
+/* =========================================
+   IMAGE SECTION
+========================================= */
+
+.friend-section {
+
+    position: relative;
+
+    width: 270px;
+    height: 270px;
+
+    margin-top: 55px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   RINGS
+========================================= */
+
+.image-ring {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border:
+        2px solid
+        rgba(255, 65, 65, 0.65);
+
+    box-shadow:
+        0 0 8px rgba(255, 30, 30, 0.5),
+        inset 0 0 8px rgba(255, 30, 30, 0.2);
+
+    pointer-events: none;
+
+    animation:
+        ringPulse 3s ease-in-out infinite;
+}
+
+
+/* OUTER RING */
+
+.ring-1 {
+    width: 270px;
+    height: 270px;
+}
+
+
+/* MIDDLE RING */
+
+.ring-2 {
+    width: 235px;
+    height: 235px;
+
+    animation-delay: 0.4s;
+}
+
+
+/* INNER RING */
+
+.ring-3 {
+    width: 205px;
+    height: 205px;
+
+    animation-delay: 0.8s;
+}
+
+
+/* =========================================
+   IMAGE GLOW
+========================================= */
+
+.friend-glow {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 175px;
+    height: 175px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 40, 40, 0.45),
+            rgba(255, 0, 0, 0.15) 50%,
+            transparent 75%
+        );
+
+    filter: blur(15px);
+
+    animation:
+        glowPulse 2.5s ease-in-out infinite alternate;
+}
+
+
+/* =========================================
+   CIRCULAR IMAGE CONTAINER
+========================================= */
+
+.friend-container {
+
+    position: relative;
+
+    z-index: 20;
+
+    /*
+       175px circle
+       Fits safely inside the
+       205px inner ring.
+    */
+
+    width: 175px;
+    height: 175px;
+
+    min-width: 175px;
+    min-height: 175px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #300000;
+
+    border:
+        2px solid
+        rgba(255, 70, 70, 0.7);
+
+    box-shadow:
+        0 0 12px rgba(255, 40, 40, 0.7),
+        0 0 25px rgba(255, 0, 0, 0.35);
+}
+
+
+/* =========================================
+   ACTUAL PHOTO
+========================================= */
+
+.friend-image {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    /*
+       THIS IS IMPORTANT.
+       It makes the rectangular
+       image fill the circle.
+    */
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    border-radius: 50%;
+
+    animation:
+        imageFloat 3s ease-in-out infinite;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.special-message {
+
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: 48px;
+
+    padding: 0 15px;
+
+    font-size: 22px;
+
+    font-style: italic;
+
+    color: #db9b9b;
+
+    white-space: nowrap;
+
+    text-shadow:
+        0 0 6px rgba(255, 100, 100, 0.35);
+}
+
+
+/* =========================================
+   START BUTTON
+========================================= */
+
+.start-button {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: 340px;
+
+    max-width: 82%;
+
+    height: 68px;
+
+    margin-top: 55px;
+
+    border-radius: 50px;
+
+    border:
+        2px solid
+        #ff5555;
+
+    outline: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(120, 0, 0, 0.75),
+            rgba(35, 0, 0, 0.95)
+        );
+
+    color: white;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    letter-spacing: 8px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 10px rgba(255, 30, 30, 0.8),
+        0 0 25px rgba(255, 0, 0, 0.6),
+        0 0 50px rgba(255, 0, 0, 0.3);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.start-button:hover {
+
+    transform: scale(1.03);
+
+    box-shadow:
+        0 0 15px rgba(255, 30, 30, 0.9),
+        0 0 35px rgba(255, 0, 0, 0.7),
+        0 0 70px rgba(255, 0, 0, 0.35);
+}
+
+.start-button:active {
+
+    transform: scale(0.94);
+}
+
+
+.button-symbol {
+
+    font-size: 15px;
+
+    letter-spacing: 0;
+
+    margin-left: 5px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 15px;
+
+    z-index: 10;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color: rgba(120, 0, 0, 0.35);
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes imageFloat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+
+@keyframes ringPulse {
+
+    0%,
+    100% {
+        opacity: 0.45;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.98);
+    }
+
+    50% {
+        opacity: 0.9;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.02);
+    }
+}
+
+
+@keyframes glowPulse {
+
+    from {
+        opacity: 0.4;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.9);
+    }
+
+    to {
+        opacity: 0.9;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+}
+
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 500px) {
+
+    .birthday-page {
+        padding-top: 105px;
+    }
+
+
+    .birthday-title h1,
+    .birthday-title h2 {
+
+        font-size: 45px;
+
+    }
+
+
+    .title-line {
+
+        width: 285px;
+
+        margin-top: 20px;
+
+    }
+
+
+    .friend-section {
+
+        width: 270px;
+        height: 270px;
+
+        margin-top: 55px;
+
+    }
+
+
+    .ring-1 {
+
+        width: 270px;
+        height: 270px;
+
+    }
+
+
+    .ring-2 {
+
+        width: 235px;
+        height: 235px;
+
+    }
+
+
+    .ring-3 {
+
+        width: 205px;
+        height: 205px;
+
+    }
+
+
+    /*
+       PERFECT CIRCLE
+       inside the inner ring
+    */
+
+    .friend-container {
+
+        width: 175px;
+        height: 175px;
+
+        min-width: 175px;
+        min-height: 175px;
+
+        border-radius: 50%;
+
+        overflow: hidden;
+
+    }
+
+
+    .friend-image {
+
+        width: 100%;
+        height: 100%;
+
+        border-radius: 50%;
+
+        object-fit: cover;
+
+        object-position: center;
+
+    }
+
+
+    .special-message {
+
+        font-size: 21px;
+
+        margin-top: 45px;
+
+    }
+
+
+    .start-button {
+
+        width: 340px;
+
+        max-width: 82%;
+
+        height: 68px;
+
+        margin-top: 55px;
+
+        font-size: 23px;
+
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL SCREEN HEIGHT
+========================================= */
+
+@media (max-height: 750px) {
+
+    .birthday-page {
+
+        padding-top: 65px;
+
+    }
+
+
+    .birthday-title h1,
+    .birthday-title h2 {
+
+        font-size: 39px;
+
+    }
+
+
+    .title-line {
+
+        margin-top: 15px;
+
+    }
+
+
+    .friend-section {
+
+        margin-top: 30px;
+
+        transform: scale(0.8);
+
+    }
+
+
+    .special-message {
+
+        margin-top: 0;
+
+        font-size: 19px;
+
+    }
+
+
+    .start-button {
+
+        margin-top: 30px;
+
+        height: 60px;
+
+    }
+
+}
