@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // PASSWORD
     // =========================================
 
-    const CORRECT_PASSWORD = "1109";
+    const CORRECT_PASSWORD = "2011";
 
     let enteredPassword = "";
 
